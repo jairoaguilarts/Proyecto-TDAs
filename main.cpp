@@ -1,11 +1,12 @@
 #include <iostream>
 #include "ArrayList.h"
 #include "LinkedList.h"
-/*#include "ArrayStack.h"
-#include "LinkedStack.h"*/
+#include "ArrayStack.h"
+#include "LinkedStack.h"
 #include "ArrayQueue.h"
 #include "LinkedQueue.h"
 #include "Alumno.h"
+#include "Simbolo.h"
 #include <cstring>
 using namespace std;
  
@@ -263,9 +264,89 @@ int main() {
                 while(opcionStack != 3){
                     switch(opcionStack) {
                         case 1: { //ArrayStack
+                            TDAPila* stack = new ArrayStack;
+                            int opcionAccion = menuPila();
+                            while(opcionAccion != 6) {
+                                switch(opcionAccion) {
+                                    case 1: {
+                                        char simbolo;
+                                        cout << "Ingrese un simbolo: ";
+                                        cin >> simbolo;
+                                        Object* item = new Simbolo(simbolo);
+                                        stack->mete(item);
+                                        cout << "Simbolo agregado al stack" << endl;
+                                        break;
+                                    }
+                                    case 2: {
+                                        Object* temp = stack->saca();
+                                        cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        break;
+                                    }
+                                    case 3: {
+                                        Object* temp = stack->tope();
+                                        cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        break;
+                                    }
+                                    case 4: {
+                                        if(stack->vacia()) {
+                                            cout << "La pila esta vacia" << endl;
+                                        } else {
+                                            cout << "La pila no esa¡ta vacia" << endl;
+                                        }
+                                        break;
+                                    }
+                                    case 5: {
+                                        stack->imprime_pila();
+                                    }
+                                    default: {
+                                        cout << "Opcion invalida" << endl;
+                                    }
+                                }
+                                opcionAccion = menuPila();
+                            }
                             break;
                         }
                         case 2: { //LinkedStack
+                            TDAPila* stack = new LinkedStack;
+                            int opcionAccion = menuPila();
+                            while(opcionAccion != 6) {
+                                switch(opcionAccion) {
+                                    case 1: {
+                                        char simbolo;
+                                        cout << "Ingrese un simbolo: ";
+                                        cin >> simbolo;
+                                        Object* item = new Simbolo(simbolo);
+                                        stack->mete(item);
+                                        cout << "Simbolo agregado al stack" << endl;
+                                        break;
+                                    }
+                                    case 2: {
+                                        Object* temp = stack->saca();
+                                        cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        break;
+                                    }
+                                    case 3: {
+                                        Object* temp = stack->tope();
+                                        cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        break;
+                                    }
+                                    case 4: {
+                                        if(stack->vacia()) {
+                                            cout << "La pila esta vacia" << endl;
+                                        } else {
+                                            cout << "La pila no esa¡ta vacia" << endl;
+                                        }
+                                        break;
+                                    }
+                                    case 5: {
+                                        stack->imprime_pila();
+                                    }
+                                    default: {
+                                        cout << "Opcion invalida" << endl;
+                                    }
+                                }
+                                opcionAccion = menuPila();
+                            }
                             break;
                         }
                         default :{
