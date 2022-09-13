@@ -8,8 +8,9 @@ ArrayStack::ArrayStack(){
 	n = 0;
 	capacidad = 10;
 	array = new Object*[capacidad];
-	for(int i = 0; i < capacidad; i++)
-		array[i] = NULL;
+	for(int i = 0; i < capacidad; i++) {
+		array[i] = nullptr;
+	}
 }
 
 ArrayStack::~ArrayStack(){
@@ -25,7 +26,7 @@ ArrayStack::~ArrayStack(){
 
 void ArrayStack::anula(){
 	for (int i = n - 1; i >= 0; i--){
-		array[i] = NULL;
+		array[i] = nullptr;
 	}
 	n = 0;
 }
@@ -44,23 +45,18 @@ void ArrayStack::mete(Object* item){
 		delete[] array;
 		array = temp;
 	}
-	if(item != NULL){
-		array[n - 1] = item;
-		n++;
+	if(item != nullptr){
+		array[n++] = item;
 	}
-	else
-		cout << "var tipo Object nulo";
 }
 
 Object* ArrayStack::saca(){
-	if(n != 0){
+	if(n != 0) {
 		Object* temp = array[n - 1];
-		delete array[n - 1];
-		n--;
+		array[--n] = nullptr;
 		return temp;
 	}
-	cout << "La Pila esta vacia";
-	return NULL;
+	return nullptr;
 }
 
 bool ArrayStack::vacia(){
@@ -68,10 +64,10 @@ bool ArrayStack::vacia(){
 }
 
 void ArrayStack::imprime_pila(){
-	if(n == 0)
-		cout << "La Pila esta vacia";
-	else{
-		for (int i = 0; i < n; i++){
+	if(n == 0) {
+		cout << "La Pila esta vacia" << endl;;
+	} else {
+		for (int i = n-1; i >= 0; i--) {
 			cout << endl;
 			cout << "-> " << array[i]->toString(); 
 		}
