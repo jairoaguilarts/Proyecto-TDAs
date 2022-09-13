@@ -17,7 +17,9 @@ char Simbolo::getSimbolo() {
 }
 
 string Simbolo::toString() {
-    return simbolo + "";
+    string cadena = "";
+    cadena += simbolo;
+    return cadena;
 }
 
 bool Simbolo::equals(Object* item) {
