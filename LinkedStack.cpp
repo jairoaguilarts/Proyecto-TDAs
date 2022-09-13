@@ -11,54 +11,50 @@ LinkedStack::~LinkedStack() {
 		delete inicio;
 } 
 
-void LinkedStack::anula(){
+void LinkedStack::anula() {
 	delete inicio;
 }
 
-Object* LinkedStack::tope(){
+Object* LinkedStack::tope() {
 	return inicio->getItem();
 }
 
 void LinkedStack::mete(Object* item){
-	if(inicio == NULL){
-		inicio->setItem(item);
-		inicio->setAnterior(NULL);
-	}
-	else{
-		Nodo* temp = new Nodo;
-		temp = inicio;
-		inicio->setItem(item);
-		temp->setAnterior(inicio->getAnterior());
-		inicio->setAnterior(temp);
-		temp->setSiguiente(inicio);
+	Nodo* newNode = new Nodo;
+	newNode->setItem(item);
+	if(inicio == nullptr){
+		inicio = newNode;
+	} else {
+		newNode->setAnterior(inicio);
+		inicio->setSiguiente(newNode);
+		inicio = newNode;
 	}
 }
 
-Object* LinkedStack::saca(){
-	if(inicio != NULL){
+Object* LinkedStack::saca() {
+	if(inicio != nullptr){
 		Nodo* temp = inicio;
 		Object* tempItem = inicio->getItem();
 		inicio = inicio->getAnterior();
-		temp = NULL;
+		temp = nullptr;
 		delete temp;
 		return tempItem;
 	}
-	cout << "La Pila esta vacia!";
-	return NULL;
+	return nullptr;
 }
 
-bool LinkedStack::vacia(){
-	return inicio == NULL;
+bool LinkedStack::vacia() {
+	return inicio == nullptr;
 }
 
-void LinkedStack::imprime_pila(){
-	if(inicio != NULL){
+void LinkedStack::imprime_pila() {
+	if(inicio != nullptr){
 		Nodo* temp = inicio;
 		while(temp){
-			cout << temp->getItem()->toString() << " ";
+			cout << "->" << temp->getItem()->toString() << endl;
 			temp = temp->getAnterior();
 		}
 	}
 	else
-		cout << "La Pila esta vacia";
+		cout << "La Pila esta vacia" << endl;
 }
