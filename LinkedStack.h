@@ -19,7 +19,6 @@ class LinkedStack : public TDAPila {
 		virtual void imprime_pila();
 	private:
 		Nodo* inicio;
-		int n;
 }; 
 
 #endif
