@@ -279,19 +279,27 @@ int main() {
                                     }
                                     case 2: {
                                         Object* temp = stack->saca();
-                                        cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        if(temp) {
+                                            cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        } else {
+                                            cout << "Pila vacia" << endl;
+                                        }
                                         break;
                                     }
                                     case 3: {
                                         Object* temp = stack->tope();
-                                        cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        if(temp) {
+                                            cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        } else {
+                                            cout << "Pila vacia" << endl;
+                                        }
                                         break;
                                     }
                                     case 4: {
                                         if(stack->vacia()) {
                                             cout << "La pila esta vacia" << endl;
                                         } else {
-                                            cout << "La pila no esa¡ta vacia" << endl;
+                                            cout << "La pila no esta vacia" << endl;
                                         }
                                         break;
                                     }
@@ -322,19 +330,27 @@ int main() {
                                     }
                                     case 2: {
                                         Object* temp = stack->saca();
-                                        cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        if(temp) {
+                                            cout << "Simbolo obtenido: " << temp->toString() << endl;
+                                        } else {
+                                            cout << "Pila vacia" << endl;
+                                        }
                                         break;
                                     }
                                     case 3: {
                                         Object* temp = stack->tope();
-                                        cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        if(temp) {
+                                            cout << "Simbolo en el tope: " << temp->toString() << endl;
+                                        } else {
+                                            cout << "Pila vacia" << endl;
+                                        }
                                         break;
                                     }
                                     case 4: {
                                         if(stack->vacia()) {
                                             cout << "La pila esta vacia" << endl;
                                         } else {
-                                            cout << "La pila no esa¡ta vacia" << endl;
+                                            cout << "La pila no esta vacia" << endl;
                                         }
                                         break;
                                     }
