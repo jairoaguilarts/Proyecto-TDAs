@@ -60,10 +60,14 @@ int main() {
                                         break;
                                     }
                                     case 3: { //Buscar un alumno por el numero de cuenta ***
-                                        string cuenta;
+                                        string cuenta, nombre;
+                                        cout << "Ingrese el nombre: ";
+                                        cin.ignore();
+                                        getline(cin, nombre);
                                         cout << "Ingrese el numero de cuenta: ";
                                         cin >> cuenta;
-                                        int posicion;
+                                        Object* item = new Alumno(nombre, cuenta);
+                                        int posicion = lista->localiza(item);
                                         if(posicion != -1) {
                                             cout << "Alumno encontrado en la posicion " << posicion << " de la lista" << endl;
                                         } else {
@@ -172,10 +176,14 @@ int main() {
                                         break;
                                     }
                                     case 3: { //Buscar un alumno por el numero de cuenta ***
-                                        string cuenta;
+                                        string cuenta, nombre;
+                                        cout << "Ingrese el nombre: ";
+                                        cin.ignore();
+                                        getline(cin, nombre);
                                         cout << "Ingrese el numero de cuenta: ";
                                         cin >> cuenta;
-                                        int posicion;
+                                        Object* item = new Alumno(nombre, cuenta);
+                                        int posicion = lista->localiza(item);
                                         if(posicion != -1) {
                                             cout << "Alumno encontrado en la posicion " << posicion << " de la lista" << endl;
                                         } else {
