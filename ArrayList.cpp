@@ -1,4 +1,5 @@
 #include "ArrayList.h"
+#include "Alumno.h"
 #include <iostream> 
 using namespace std;
 
@@ -101,7 +102,7 @@ void ArrayList::append(Object* objeto) {
 int ArrayList::localiza(Object* objeto) {
 	int posicion = -1;
 	for(int i = 0; i < n; i++) {
-		if(array[i] == objeto) {
+		if(dynamic_cast<Alumno*>(array[i])->getCuenta() == dynamic_cast<Alumno*>(objeto)->getCuenta()) {
 			posicion = i + 1;
 			break;
 		}

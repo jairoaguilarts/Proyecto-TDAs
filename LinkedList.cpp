@@ -1,4 +1,5 @@
 #include "LinkedList.h"
+#include "Alumno.h"
 #include <iostream>
 using namespace std;
 
@@ -133,8 +134,8 @@ int LinkedList::localiza(Object* item) {
 	int index = -1;
 	Nodo* temp = this->inicio;
 	for(int i = 1; i <= n; i++) {
-		if(temp->getItem() == item) {
-			index = 1;
+		if(dynamic_cast<Alumno*>(temp->getItem())->getCuenta() == dynamic_cast<Alumno*>(item)->getCuenta()) {
+			index = i;
 			break;
 		}
 		temp = temp->getSiguiente();
