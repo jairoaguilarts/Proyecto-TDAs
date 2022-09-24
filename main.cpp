@@ -60,13 +60,10 @@ int main() {
                                         break;
                                     }
                                     case 3: { //Buscar un alumno por el numero de cuenta ***
-                                        string cuenta, nombre;
-                                        cout << "Ingrese el nombre: ";
-                                        cin.ignore();
-                                        getline(cin, nombre);
+                                        string cuenta;
                                         cout << "Ingrese el numero de cuenta: ";
                                         cin >> cuenta;
-                                        Object* item = new Alumno(nombre, cuenta);
+                                        Object* item = new Alumno(" ", cuenta);
                                         int posicion = lista->localiza(item);
                                         if(posicion != -1) {
                                             cout << "Alumno encontrado en la posicion " << posicion << " de la lista" << endl;
