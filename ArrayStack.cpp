@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#define NULL 0
+//#define NULL 0
 
 ArrayStack::ArrayStack(){
 	n = 0;

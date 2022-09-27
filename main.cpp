@@ -18,6 +18,8 @@ int menuPilas();
 int menuPila();
 int menuQueues();
 int menuQueue();
+bool verificadorEntrada(char c1);
+bool verificadorEntrada(string o);
 
 int main() {
     int opcionMenuPrincipal = menuPrincipal();
@@ -511,29 +513,43 @@ int main() {
 //Implementaciones de los menus 
 int menuPrincipal() {
     int opcion;
+    char opc;
     cout << "====MENU PRINCIPAL====" << endl;
     cout << "1) Trabajar con Listas" << endl;
     cout << "2) Trabajar con Pilas" << endl;
     cout << "3) Trabajar con Colas" << endl;
     cout << "4) Salir" << endl;
     cout << "Ingrese una opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
 }
 
 int menuListas() {
     int opcion;
+    char opc;
     cout << "====LISTAS====" << endl;
     cout << "1) Trabajar con ArrayList" << endl;
     cout << "2) Trabajar con LinkedList" << endl;
     cout << "3) Regresar al menu principal" << endl;
     cout << "Ingrese una opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
 }
 
 int menuLista() {
     int opcion;
+    string opc;
+    char c1, c2;
     cout << "====MENU LISTA====" << endl;
     cout << "1) Insertar elemento" << endl;
     cout << "2) Imprimir elementos" << endl;
@@ -546,23 +562,35 @@ int menuLista() {
     cout << "9) Anular lista" << endl;
     cout << "10) Regresar al menu principal" << endl;
     cout << "Ingrese una opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = stoi(opc);
     return opcion;
 }
 
 int menuPilas() {
     int opcion;
+    char opc;
     cout << "====PILAS====" << endl;
     cout << "1) Trabajar con ArrayStack" << endl;
     cout << "2) Trabajar con LinkedStack" << endl;
     cout << "3) Regresar al menu principal" << endl;
     cout << "Ingrese una opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
 }
 
 int menuPila() {
     int opcion;
+    char opc;
     cout << "====MENU PILA====" << endl;
     cout << "1) Push" << endl;
     cout << "2) Pop" << endl;
@@ -571,23 +599,35 @@ int menuPila() {
     cout << "5) Imprimir elementos" << endl;
     cout << "6) Regresar al menu principal" << endl;
     cout << "Ingrese una opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
 }
 
 int menuQueues()  {
     int opcion;
+    char opc;
     cout << "====COLAS====" << endl;
     cout << "1) Trabajar con ArrayQueue" << endl;
     cout << "2) Trabajar con LinkedQueue" << endl;
     cout << "3) Regresar al menu principal" << endl;
     cout << "Ingrese una opcion: ";
     cin >> opcion;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
 }
 
 int menuQueue() {
     int opcion;
+    char opc;
     cout << "====MENU QUEUE====" << endl;
     cout << "1) Queue" << endl;
     cout << "2) De-Queue" << endl;
@@ -596,6 +636,30 @@ int menuQueue() {
     cout << "5) Imprimir elementos" << endl;
     cout << "6) Regresar al menu principal" << endl;
     cout << "Ingrese su opcion: ";
-    cin >> opcion;
+    cin >> opc;
+    while(!verificadorEntrada(opc)){
+        cout << "Entrada invalida: ";
+        cin >> opc;
+    }
+    opcion = opc - '0';
     return opcion;
+}
+
+bool verificadorEntrada(char c){
+    if(c >= 48 && c <= 57)
+        return true;
+    return false;
+}
+bool verificadorEntrada(string opc){
+    char c1, c2;
+    c1 = opc[0]; c2 = opc[1];
+    if(opc.length() == 1){
+        if(c1 >= 48 && c1 <= 57)
+            return true;
+    }
+    else{
+        if(c1 >= 48 && c1 <= 57 && c2 >= 48 && c2 <= 57)
+            return true;
+    }
+    return false;
 }
