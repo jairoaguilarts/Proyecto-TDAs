@@ -307,6 +307,7 @@ int main() {
                                     }
                                     case 5: {
                                         stack->imprime_pila();
+                                        break;
                                     }
                                     default: {
                                         cout << "Opcion invalida" << endl;
@@ -358,6 +359,7 @@ int main() {
                                     }
                                     case 5: {
                                         stack->imprime_pila();
+                                        break;
                                     }
                                     default: {
                                         cout << "Opcion invalida" << endl;
@@ -426,9 +428,6 @@ int main() {
                                         cola->imprime_cola();
                                         break;
                                     }
-                                    case 6: {
-                                        break;
-                                    }
                                     default: {
                                         cout << "Opcion invalida" << endl;
                                     }
@@ -482,9 +481,6 @@ int main() {
                                     }
                                     case 5: {
                                         cola->imprime_cola();
-                                        break;
-                                    }
-                                    case 6: {
                                         break;
                                     }
                                     default: {

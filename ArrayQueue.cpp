@@ -33,7 +33,7 @@ void ArrayQueue::imprime_cola() {
 	if (n) {
 		int pos = inicio;
 		for (int i = 0; i < n; i++) {
-			cout << array[pos-1]->toString();
+			cout << array[pos-1]->toString() << " ";
 			if (pos == capacidad) {
 				pos = 1;
 			} else {
